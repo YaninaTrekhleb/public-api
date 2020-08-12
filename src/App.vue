@@ -1,29 +1,42 @@
 <template>
   <div id="app">
-    <h1>{{ message }}</h1>
+    <NavMenu />
+    <router-view /> 
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import NavMenu from './components/NavMenu.vue'
 
 export default {
   name: 'App',
-  data () {
-    return {
-      message: 'Hello Vue!'
-    }
-  }
+  components: {
+    NavMenu
+  },
+  // data () {
+  //   return {
+  //     message: 'Title title'
+  //   }
+  // }
 }
 </script>
 
-<style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+<style scoped>
+  body {
+    margin: 0;
+    background: rgb(138, 155, 199);
+  }
+
+  #app {
+    background-color: rgb(177, 161, 161);
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+  }
+
+  h1 {
+    color: rgb(86, 86, 138);
+    background-color: lavender;
+  }
+
 </style>
