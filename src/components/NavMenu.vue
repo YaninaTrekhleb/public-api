@@ -24,6 +24,7 @@ export default {
   #nav-menu {
     display: flex;   
     justify-content: space-around;
+    background-color: rgb(173, 173, 184);
   }
 
   #nav-menu a {
