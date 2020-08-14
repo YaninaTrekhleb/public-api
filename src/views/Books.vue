@@ -1,13 +1,13 @@
 <template>
-  <div class="random-recipe">
-    <h1>Random</h1>
-    <!-- <button v-on:click="fetchRecipes">Lunch recipes here</button>  -->
+  <div class="books">
+    <h1>{{this.category}}</h1>
+    <!-- <button v-on:click="fetchRecipes">RECIPES HERE</button>  -->
    <div v-if="apis != null">
-      <div v-for="api in apis.entries" :key="api.API">
-        <h2>{{ api.API }}</h2>
-        <p>{{ api.Description }}</p>
-        <p>{{ api.Link }}</p>
-      </div>
+    <div v-for="api in apis.entries" :key="api.API">
+      <h2>{{ api.API }}</h2>
+      <p>{{ api.Description }}</p>
+      <p>{{ api.Link }}</p>
+    </div>
     </div>
   </div>
 </template>
@@ -16,16 +16,17 @@
 // @ is an alias to /src
 
 export default {
-  name: 'RandomRecipe',
-  data () {
+  name: 'Books',
+   data () {
     return {
-      url_base: 'https://api.publicapis.org/random',
+      url_base: 'https://api.publicapis.org/entries',
+      category: 'books',
       apis: null
     }
   },
   methods: {
     fetchRecipes () {
-      fetch(`${this.url_base}`)
+      fetch(`${this.url_base}?category=${this.category}`)
         .then(res => {
           return res.json();
         })

@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Breakfast from '../views/Breakfast.vue'
-import Lunch from '../views/Lunch.vue'
-import Dinner from '../views/Dinner.vue'
+import Category from '../views/Category.vue'
+import Food from '../views/Food.vue'
+import Animals from '../views/Animals.vue'
+import Books from '../views/Books.vue'
 import RandomRecipe from '../views/RandomRecipe.vue'
 
 Vue.use(VueRouter)
@@ -15,19 +16,24 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/breakfast',
-    name: 'Breakfast',
-    component: Breakfast
+    path: '/category/:categoryId',
+    name: 'Category',
+    component: Category
   },
   {
-    path: '/lunch',
-    name: 'Lunch',
-    component: Lunch
+    path: '/food',
+    name: 'Food',
+    component: Food
   },
   {
-    path: '/dinner',
-    name: 'Dinner',
-    component: Dinner
+    path: '/animals',
+    name: 'Animals',
+    component: Animals
+  },
+  {
+    path: '/books',
+    name: 'Books',
+    component: Books
   },
   {
     path: '/random',

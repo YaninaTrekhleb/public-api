@@ -2,9 +2,10 @@
   <div id="nav-menu">
     <h1>{{ title }}</h1>
     <router-link to="/">Home</router-link> 
-    <router-link v-bind:to="{ name: 'Breakfast' }">Breakfast</router-link>
-    <router-link to="/lunch">Lunch</router-link>
-    <router-link to="/dinner">Dinner</router-link>
+    <router-link to="">Category</router-link>
+    <router-link to="/food">Food</router-link>
+    <router-link to="/animals">Animals</router-link>
+    <router-link to="/books">Books</router-link>
     <router-link to="/random">Random recipe</router-link>
   </div>
 </template>
