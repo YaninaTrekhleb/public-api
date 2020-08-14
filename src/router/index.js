@@ -6,6 +6,7 @@ import Food from '../views/Food.vue'
 import Animals from '../views/Animals.vue'
 import Books from '../views/Books.vue'
 import RandomRecipe from '../views/RandomRecipe.vue'
+import ApiDetails from '../views/ApiDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ Vue.use(VueRouter)
     name: 'RandomRecipe',
     component: RandomRecipe
   },
+  {
+    path: '/api/:apiId',
+    name: 'ApiDetails',
+    component: ApiDetails
+  }
 ]
 
 const router = new VueRouter({

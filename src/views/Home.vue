@@ -5,7 +5,11 @@
     <button v-on:click="sortBy('Description')">Sort by Description(A-Z)</button>
     <div v-if="apis != null" class="apisView">
       <div v-for="api in apis" v-bind:key="api.API">
-        <h2>{{ api.API }}</h2>
+        <h2>
+          <router-link :to="`/api/${api.API}`">
+            {{ api.API }}
+          </router-link>
+        </h2>
         <p>{{ api.Description }}</p>
         <p>{{ api.Link }}</p>
       </div>
