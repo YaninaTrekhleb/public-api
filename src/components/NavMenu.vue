@@ -1,16 +1,19 @@
 <template>
   <div id="nav-menu">
-    <h1>{{ title }}</h1>
-    <router-link to="/">Home</router-link> 
-    <router-link to="">Category</router-link>
-    <router-link to="/food">Food</router-link>
-    <router-link to="/animals">Animals</router-link>
-    <router-link to="/books">Books</router-link>
-    <router-link to="/random">Random recipe</router-link>
+    <div class="fixed-top">
+      <h1>{{ title }}</h1>
+      <router-link to="/">Home</router-link> 
+      <router-link to="">Category</router-link>
+      <router-link to="/food">Food</router-link>
+      <router-link to="/animals">Animals</router-link>
+      <router-link to="/books">Books</router-link>
+      <router-link to="/random">Random Api</router-link>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data: function () {
     return {
@@ -22,10 +25,20 @@ export default {
 </script>
 
 <style scoped>
+
+  .fixed-top {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(173, 173, 184);
+    width: 100%;
+    top: 0;
+  }
+
   #nav-menu {
     display: flex;   
     justify-content: space-around;
-    background-color: rgb(173, 173, 184);
+    padding-top: 200px;
   }
 
   #nav-menu a {

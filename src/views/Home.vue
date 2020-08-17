@@ -1,8 +1,26 @@
 <template>
   <div class="home">
-    <!-- <button v-on:click="fetchRecipes">RECIPES HERE</button>  -->
-    <button v-on:click="sortBy('API')">Sort by title (A-Z)</button>
-    <button v-on:click="sortBy('Description')">Sort by Description(A-Z)</button>
+    <div class="header-banner"> 
+      <h1>HEEELOOOO</h1>
+    </div>
+    <!-- <button v-on:click="fetchApis">RECIPES HERE</button>  -->
+    <label>Sort by: </label>
+    <select>
+      <option 
+        value="title" 
+        :options="sortBy('API')"
+      >
+        Title (A-Z)
+      </option>
+      <option 
+        value="description" 
+        :options="sortBy('Description')"
+      >
+      Description(A-Z)
+      </option>
+    </select>
+    <!-- <button v-on:click="sortBy('API')">Sort by title (A-Z)</button>
+    <button v-on:click="sortBy('Description')">Sort by Description(A-Z)</button> -->
     <div v-if="apis != null" class="apisView">
       <div v-for="api in apis" v-bind:key="api.API">
         <h2>
@@ -13,15 +31,7 @@
         <p>{{ api.Description }}</p>
         <p>{{ api.Link }}</p>
       </div>
-    </div>
-    <!-- <ol v-if="apis != null">
-      <li v-for="api in apis" :key="api.API">
-        {{ api.API }} ||
-        {{ api.Description }} ||
-        {{ api.Link }}
-      </li>
-    </ol>  -->
-    
+    </div>    
   </div>
 </template>
 
@@ -38,7 +48,7 @@ export default {
     }
   },
   methods: {
-    fetchRecipes () {
+    fetchApis () {
       fetch(`${this.url_base}`)
         .then(res => {
           return res.json();
@@ -55,7 +65,7 @@ export default {
     }
   },
   async created() {
-    this.fetchRecipes();
+    this.fetchApis();
   }
 }
 </script>
@@ -65,6 +75,10 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .header-banner {
+    background-image: url('/src/images/background.jpg');
   }
 
   .apisView div {

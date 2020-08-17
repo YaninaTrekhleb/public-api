@@ -1,13 +1,15 @@
 <template>
-  <div class="random-recipe">
+  <div class="random-api">
     <h1>Random</h1>
-    <!-- <button v-on:click="fetchRecipes">Lunch recipes here</button>  -->
    <div v-if="apis != null">
       <div v-for="api in apis.entries" :key="api.API">
         <h2>{{ api.API }}</h2>
         <p>{{ api.Description }}</p>
         <p>{{ api.Link }}</p>
       </div>
+    </div>
+    <div class="another-random-btn">
+      <button v-on:click="fetchApis">Choose another API</button> 
     </div>
   </div>
 </template>
@@ -16,7 +18,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'RandomRecipe',
+  name: 'RandomApi',
   data () {
     return {
       url_base: 'https://api.publicapis.org/random',
@@ -24,7 +26,7 @@ export default {
     }
   },
   methods: {
-    fetchRecipes () {
+    fetchApis () {
       fetch(`${this.url_base}`)
         .then(res => {
           return res.json();
@@ -38,7 +40,7 @@ export default {
     }
   },
   async created() {
-    this.fetchRecipes();
+    this.fetchApis();
   }
 }
 </script>

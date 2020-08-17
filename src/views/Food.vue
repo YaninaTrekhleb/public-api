@@ -2,7 +2,6 @@
   <div class="food">
     <h1>{{this.category}}</h1>
     <p class="para">DSgsjfgjdfjndfjnfdjnfdjknfbdnf</p>
-    <!-- <button v-on:click="fetchRecipes">Breakfast recipes here</button>  -->
     <div v-if="apis != null" class="apisView">
       <div v-for="api in apis.entries" :key="api.API">
         <h2>{{ api.API }}</h2>
@@ -26,7 +25,7 @@ export default {
     }
   },
   methods: {
-    fetchRecipes () {
+    fetchApis () {
       fetch(`${this.url_base}?category=${this.category}`)
         .then(res => {
           return res.json();
@@ -40,7 +39,7 @@ export default {
     }
   },
   async created() {
-    this.fetchRecipes();
+    this.fetchApis();
   }
 }
 </script>

@@ -5,7 +5,7 @@ import Category from '../views/Category.vue'
 import Food from '../views/Food.vue'
 import Animals from '../views/Animals.vue'
 import Books from '../views/Books.vue'
-import RandomRecipe from '../views/RandomRecipe.vue'
+import RandomApi from '../views/RandomApi.vue'
 import ApiDetails from '../views/ApiDetails.vue'
 
 Vue.use(VueRouter)
@@ -38,8 +38,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/random',
-    name: 'RandomRecipe',
-    component: RandomRecipe
+    name: 'RandomApi',
+    component: RandomApi
   },
   {
     path: '/api/:apiId',
