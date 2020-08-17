@@ -5,18 +5,16 @@
     </div>
     <!-- <button v-on:click="fetchApis">RECIPES HERE</button>  -->
     <label>Sort by: </label>
-    <select>
+    <select @change="onSortChange($event)" v-model="sortingKey">
       <option 
-        value="title" 
-        :options="sortBy('API')"
+        value="API" 
       >
         Title (A-Z)
       </option>
       <option 
-        value="description" 
-        :options="sortBy('Description')"
+        value="Description" 
       >
-      Description(A-Z)
+        Description(A-Z)
       </option>
     </select>
     <!-- <button v-on:click="sortBy('API')">Sort by title (A-Z)</button>
@@ -42,6 +40,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      sortingKey: 'API',
       url_base: 'https://api.publicapis.org/entries',
       category: '',
       apis: null
@@ -62,7 +61,10 @@ export default {
     },
     sortBy (prop) {
       this.apis.sort((a,b) => a[prop] < b[prop] ? -1 : 1);
-    }
+    },
+    onSortChange(event) {
+      this.sortBy(event.target.value);
+    },
   },
   async created() {
     this.fetchApis();
