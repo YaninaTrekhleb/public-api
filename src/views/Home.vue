@@ -57,7 +57,7 @@ export default {
     },
     setResults (results) {
       // console.log(results.entries[0].Description)
-      this.apis = results.entries.slice(0,10);
+      this.apis = results.entries.slice(0, 10);
     },
     sortBy (prop) {
       this.apis.sort((a,b) => a[prop] < b[prop] ? -1 : 1);
