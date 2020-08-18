@@ -2,6 +2,7 @@
   <div id="app">
     <NavMenu />
     <router-view /> 
+    <Category />
   </div>
 </template>
 

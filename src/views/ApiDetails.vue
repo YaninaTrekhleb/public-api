@@ -1,12 +1,12 @@
 <template>
   <div id="api-details">
-    <div v-if="apis != null && apis.entries && apis.entries.length" class="apisView">
+    <div v-if="apis != null && apis.entries && apis.entries.length" class="apis-view">
       <h1> {{ apis.entries[0].API }} </h1>
       <p> {{ apis.entries[0].Description }} </p>
       <a :href="apis.entries[0].Link"> {{ apis.entries[0].Link }}</a>
 
       <h2>You may also like</h2>
-      <div v-if="similarApis != null" class="similarApisView">
+      <div v-if="similarApis != null" class="similar-api-view">
         <div v-for="api in similarApis" v-bind:key="api.API">
         <h2>
           <router-link :to="`/api/${api.API}`">
@@ -17,7 +17,6 @@
         <p>{{ api.Link }}</p>
         </div>
       </div> 
-
     </div> 
   </div>
 </template>
@@ -73,5 +72,14 @@ export default {
 </script>
 
 <style scoped>
+  .api-views {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .similar-api-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 </style>
