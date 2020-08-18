@@ -3,10 +3,10 @@
     <div class="fixed-top">
       <h1>{{ title }}</h1>
       <router-link to="/">Home</router-link> 
-      <router-link to="/category">Category</router-link>
-      <router-link to="/category/food">Food</router-link>
+      <router-link to="/apiCategories">API Categories</router-link>
+      <!-- <router-link to="/category/food">Food</router-link>
       <router-link to="/category/animals">Animals</router-link>
-      <router-link to="/category/books">Books</router-link>
+      <router-link to="/category/books">Books</router-link> -->
       <router-link to="/random">Random Api</router-link>
     </div>
   </div>

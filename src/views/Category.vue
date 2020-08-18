@@ -1,6 +1,6 @@
 <template>
   <div id="category-page">
-    <div class="food">
+    <div>
       <h1>{{this.category}}</h1>
       <div v-if="apis != null" class="apis-view">
         <div v-for="api in apis.entries" :key="api.API">
@@ -21,7 +21,6 @@ export default {
   name: 'CategoryPage',
   data () {
     return {
-      title: 'Title Title',
       url_base: 'https://api.publicapis.org/entries',
       category: this.$route.params.categoryId,
       apis: null

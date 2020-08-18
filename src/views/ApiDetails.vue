@@ -1,11 +1,12 @@
 <template>
   <div id="api-details">
-    <div v-if="apis != null && apis.entries && apis.entries.length" class="apis-view">
+    <div v-if="apis != null && apis.entries && apis.entries.length" class="apis-specific">
       <h1> {{ apis.entries[0].API }} </h1>
       <p> {{ apis.entries[0].Description }} </p>
       <a :href="apis.entries[0].Link"> {{ apis.entries[0].Link }}</a>
-
-      <h2>You may also like</h2>
+      <div class="see-more">
+        <h2>You may also like</h2>
+      </div>
       <div v-if="similarApis != null" class="similar-api-view">
         <div v-for="api in similarApis" v-bind:key="api.API">
         <h2>
@@ -14,7 +15,7 @@
           </router-link>
         </h2>
         <p>{{ api.Description }}</p>
-        <p>{{ api.Link }}</p>
+        <a :href="apis.entries[0].Link"> {{ apis.entries[0].Link }}</a>
         </div>
       </div> 
     </div> 
@@ -67,19 +68,59 @@ export default {
   },
   async created() {
     this.fetchApis();
-  }
+  },
+  watch: {
+      // eslint-disable-next-line
+      '$route' (to, from) {
+        if (to && to.params && to.params.apiId) {
+          this.id = to.params.apiId;
+          console.log(to.params.apiId);
+          this.fetchApis();
+        }
+      }
+    }
 }
 </script>
 
 <style scoped>
-  .api-views {
+  #api-details {
+    color: rgb(112, 76, 76);
+  }
+
+  .apis-specific {
     display: flex;
     flex-direction: column;
+  }
+
+  .apis-specific h1 {
+    color: #516d6d;
+  } 
+
+  .see-more h2 {
+    color: #9c6b50;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 120px;
+    margin-bottom: 0;
   }
 
   .similar-api-view {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+  .similar-api-view div {
+    width: 40%;
+    border: 1px solid #e4dcd2c2;
+    padding: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 6px 4px #e4dcd2c2;
+    margin: 30px;
+    background-color: #f3ede67e;
+  }
+
+  .similar-api-view a {
+    font-weight: 200;
   }
 </style>

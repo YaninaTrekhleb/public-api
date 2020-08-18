@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Category from '../views/Category.vue'
+import ApiCategories from '../views/ApiCategories.vue'
 import RandomApi from '../views/RandomApi.vue'
 import ApiDetails from '../views/ApiDetails.vue'
 
@@ -12,6 +13,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/apiCategories',
+    name: 'ApiCategories',
+    component: ApiCategories
   },
   {
     path: '/category/:categoryId',

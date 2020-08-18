@@ -29,7 +29,6 @@
             </router-link>
           </h2>
           <p>{{ api.Description }}</p>
-        <!-- <p>{{ api.Link }}</p> -->
       </div>
     </div>    
   </div>
@@ -83,6 +82,7 @@ export default {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 36px;
+    margin-bottom: 50px;
   }
 
   .apis-view {
@@ -99,6 +99,7 @@ export default {
   .apis-view div {
     width: 40%;
     border: 1px solid #e4dcd2c2;
+    border-radius: 8px;
     padding: 1rem;
     font-weight: bold;
     box-shadow: 2px 2px 6px 4px #e4dcd2c2;
