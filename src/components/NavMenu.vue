@@ -4,9 +4,6 @@
       <h1>{{ title }}</h1>
       <router-link to="/">Home</router-link> 
       <router-link to="/apiCategories">API Categories</router-link>
-      <!-- <router-link to="/category/food">Food</router-link>
-      <router-link to="/category/animals">Animals</router-link>
-      <router-link to="/category/books">Books</router-link> -->
       <router-link to="/random">Random Api</router-link>
     </div>
   </div>
@@ -25,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
   .fixed-top {
     position: fixed;
@@ -39,7 +36,7 @@ export default {
   #nav-menu {
     font-family: 'Roboto', sans-serif;
     display: flex;   
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding-top: 150px;
   }
 
@@ -68,4 +65,38 @@ export default {
     flex: 2;
     padding: 20px;
   }
+
+/* iPad version */
+@media (min-width: 768px) and (max-width: 1024px) { 
+  #nav-menu a {
+    justify-content: center;
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
+/* iPhone version */
+@media (max-width: 812px) { 
+  .fixed-top {
+    flex-direction: column;
+  }
+
+  #nav-menu a {
+    font-size: 20px;
+    flex-direction: column;
+    padding: 5px 0;
+  }
+
+  h1 {
+    font-size: 30px;
+    flex: 2;
+    padding: 10px;
+    align-self: center;
+    margin-bottom: 5px;
+  }
+}
 </style>

@@ -92,20 +92,16 @@ export default {
     justify-items: center;
     padding: 30px;
   }
-  /* color: #f3ede6; */
- /* #9eb1b0
- #b7cdcc */
- /* #edc3ae */
+ 
   .apis-view div {
     width: 40%;
     border: 1px solid #e4dcd2c2;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 16px;
     font-weight: bold;
     box-shadow: 2px 2px 6px 4px #e4dcd2c2;
     margin: 30px;
     background-color: #f3ede67e;
-    /* background-color: rgb(219, 179, 171); */
   }
 
   h2 {
@@ -149,4 +145,39 @@ export default {
     padding-right: 10px;
     border: 1px #808080 solid;
   }
+
+  /* iPad version */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .apis-view {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* iPhone version */
+@media (max-width: 812px) { 
+  h1 {
+    font-size: 30px;
+    padding: 20px;
+    margin: 0;
+  }
+
+ .apis-view {
+    flex-direction: column;
+    align-items: center;
+  }
+
+   .apis-view div {
+    width: 80%;
+    padding: 10px;
+  }
+
+   h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
 </style>

@@ -123,4 +123,48 @@ export default {
   .similar-api-view a {
     font-weight: 200;
   }
+
+/* iPad version */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .similar-api-view {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .similar-api-view div {
+    width: 30%;
+  }
+
+  .apis-specific h1 {
+    margin-bottom: 0;
+  }
+
+  .see-more h2 {
+    margin-top: 80px;
+  }
+
+  .similar-api-view a {
+    word-break: break-all;
+  } 
+}
+
+/* iPhone version */
+@media (max-width: 812px) { 
+  .similar-api-view {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .similar-api-view div {
+    width: 80%;
+  }
+
+  .similar-api-view a {
+    word-break: break-all;
+  } 
+
+  .see-more h2 {
+    margin-top: 50px;
+  }
+}
 </style>

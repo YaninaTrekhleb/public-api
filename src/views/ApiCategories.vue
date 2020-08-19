@@ -45,5 +45,15 @@ export default {
 </script>
 
 <style scoped>
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .apis-view {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
+    .apis-view div {
+      width: 30%;
+    }
+  }
 </style>
