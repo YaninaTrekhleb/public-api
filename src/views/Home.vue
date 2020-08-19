@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div class="header-banner"> 
+      <div class="home-banner"></div>
       <h1>{{ title }}</h1>
     </div>
-    <!-- <button v-on:click="fetchApis">RECIPES HERE</button>  -->
     <div class="sorting">
       <label>Sort by: </label>
       <select @change="onSortChange($event)" v-model="sortingKey">
@@ -76,6 +76,19 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+  .home-banner {
+    height: 300px;
+    width: 100%;
+    background-image: url('../images/background-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .home-banner img {
+    margin: 0;
+    padding: 0;
+  }
 
   h1 {
     color: #c79072;

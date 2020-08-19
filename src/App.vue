@@ -17,20 +17,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
   body {
     margin: 0;
   }
 
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     width: 100%;
   }
 
   h1 {
-    color: rgb(86, 86, 138);
-    background-color: lavender;
+    color: #516d6d;
   }
 
 </style>

@@ -31,13 +31,14 @@ export default {
     background-color: #b7cdcc;
     width: 100%;
     top: 0;
+    padding: 30px 15px;
   }
 
   #nav-menu {
     font-family: 'Roboto', sans-serif;
     display: flex;   
     justify-content: space-evenly;
-    padding-top: 150px;
+    padding-top: 100px;
   }
 
   #nav-menu a {
@@ -63,7 +64,8 @@ export default {
     display: flex;
     color: #516d6d;
     flex: 2;
-    padding: 20px;
+    margin: 0;
+    padding-left: 30px;
   }
 
 /* iPad version */
@@ -83,6 +85,7 @@ export default {
 @media (max-width: 812px) { 
   .fixed-top {
     flex-direction: column;
+    padding: 0;
   }
 
   #nav-menu a {
