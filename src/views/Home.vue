@@ -19,8 +19,6 @@
         </option>
       </select>
     </div>
-    <!-- <button v-on:click="sortBy('API')">Sort by title (A-Z)</button>
-    <button v-on:click="sortBy('Description')">Sort by Description(A-Z)</button> -->
     <div v-if="apis != null" class="apis-view">
       <div v-for="api in apis" v-bind:key="api.API">
           <h2>
@@ -57,7 +55,6 @@ export default {
         .catch(() => console.log("Can’t access response. Blocked by browser?"));
     },
     setResults (results) {
-      // console.log(results.entries[0].Description)
       this.apis = results.entries.slice(0, 10);
     },
     sortBy (prop) {

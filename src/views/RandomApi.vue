@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'RandomApi',
@@ -39,7 +38,6 @@ export default {
         .catch(() => console.log("Can’t access response. Blocked by browser?"));
     },
     setResults (results) {
-      // console.log(results.entries[0].Description)
       this.apis = results;
     }
   },

@@ -58,7 +58,6 @@ export default {
         const categoryId = results.entries[0].Category;
         this.fetchSimilarApis(categoryId);
       }
-      // console.log(this.apis.entries[0].Description);
     },
     setSimilarResults (results) {
       if (results && results.entries && results.entries.length) {
