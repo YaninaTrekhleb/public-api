@@ -5,6 +5,7 @@ import Category from '../views/Category.vue'
 import ApiCategories from '../views/ApiCategories.vue'
 import RandomApi from '../views/RandomApi.vue'
 import ApiDetails from '../views/ApiDetails.vue'
+import Sitemap from '../components/Sitemap.vue' 
 
 Vue.use(VueRouter)
 
@@ -33,7 +34,13 @@ Vue.use(VueRouter)
     path: '/api/:apiId',
     name: 'ApiDetails',
     component: ApiDetails
-  }
+  },
+  {
+    path: '/sitemap',
+    name: 'Sitemap',
+    component: Sitemap
+  },
+
 ]
 
 const router = new VueRouter({

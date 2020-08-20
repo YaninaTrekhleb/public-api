@@ -145,7 +145,7 @@ export default {
 
   .similar-api-view a {
     word-break: break-all;
-  } 
+  }
 }
 
 /* iPhone version */

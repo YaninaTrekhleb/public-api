@@ -70,6 +70,19 @@ export default {
     font-size: 20px;
     font-weight: 600;
     padding: 10px 15px;
-    margin: 0.5rem 0.25rem;
+    margin-bottom: 250px;
+}
+/* iPad version */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .another-random-btn button {
+    margin-bottom: 465px;
+  }
+}
+
+/* iPhone version */
+@media (max-width: 812px) { 
+  .another-random-btn button {
+    margin-bottom: 200px;
+  }
 }
 </style>

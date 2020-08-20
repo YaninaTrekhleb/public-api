@@ -3,16 +3,19 @@
     <NavMenu />
     <router-view /> 
     <Category />
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavMenu from './components/NavMenu.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    NavMenu
+    NavMenu,
+    Footer
   }
 }
 </script>
