@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 export default {
   data () {
     return {
@@ -46,7 +45,6 @@ export default {
     flex-direction: row;
     align-self: center;
     flex: 1;
-
     font-size: 26px;
     color: #faf6f1;
     text-decoration: none;

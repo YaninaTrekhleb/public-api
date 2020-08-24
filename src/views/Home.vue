@@ -7,33 +7,28 @@
     <div class="sorting">
       <label>Sort by: </label>
       <select @change="onSortChange($event)" v-model="sortingKey">
-        <option 
-          value="API" 
-        >
+        <option value="API">
           Title (A-Z)
         </option>
-        <option 
-          value="Description" 
-        >
+        <option value="Description">
           Description (A-Z)
         </option>
       </select>
     </div>
     <div v-if="apis != null" class="apis-view">
       <div v-for="api in apis" v-bind:key="api.API">
-          <h2>
-            <router-link :to="`/api/${api.API}`">
-              {{ api.API }}
-            </router-link>
-          </h2>
-          <p>{{ api.Description }}</p>
+        <h2>
+          <router-link :to="`/api/${api.API}`">
+            {{ api.API }}
+          </router-link>
+        </h2>
+        <p>{{ api.Description }}</p>
       </div>
     </div>    
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Home',
   data () {
@@ -155,7 +150,7 @@ export default {
     border: 1px #808080 solid;
   }
 
-  /* iPad version */
+/* iPad version */
 @media (min-width: 768px) and (max-width: 1024px) {
   .apis-view {
     flex-direction: column;

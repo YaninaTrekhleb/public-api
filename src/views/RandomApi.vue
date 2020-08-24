@@ -1,7 +1,7 @@
 <template>
   <div class="random-api">
     <h1>{{ title }}</h1>
-   <div v-if="apis != null" class="random-api-view">
+    <div v-if="apis != null" class="random-api-view">
       <div v-for="api in apis.entries" :key="api.API">
         <h2>
           <router-link :to="`/api/${api.API}`">
@@ -48,9 +48,6 @@ export default {
 </script>
 
 <style scoped>
-  .random-api h1 {
-  }
-
   .random-api-view h2 {
     color: #587474;
   }
@@ -70,6 +67,7 @@ export default {
     padding: 10px 15px;
     margin-bottom: 250px;
 }
+
 /* iPad version */
 @media (min-width: 768px) and (max-width: 1024px) {
   .another-random-btn button {

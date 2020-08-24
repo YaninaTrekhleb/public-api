@@ -1,9 +1,9 @@
 <template>
   <div id="api-details">
     <div v-if="apis != null && apis.entries && apis.entries.length" class="apis-specific">
-      <h1> {{ apis.entries[0].API }} </h1>
-      <p> {{ apis.entries[0].Description }} </p>
-      <a :href="apis.entries[0].Link"> {{ apis.entries[0].Link }}</a>
+      <h1>{{ apis.entries[0].API }}</h1>
+      <p>{{ apis.entries[0].Description }}</p>
+      <a :href="apis.entries[0].Link">{{ apis.entries[0].Link }}</a>
       <div class="see-more">
         <h2>You may also like</h2>
       </div>
@@ -15,7 +15,7 @@
           </router-link>
         </h2>
         <p>{{ api.Description }}</p>
-        <a :href="apis.entries[0].Link"> {{ apis.entries[0].Link }}</a>
+        <a :href="apis.entries[0].Link">{{ apis.entries[0].Link }}</a>
         </div>
       </div> 
     </div> 
@@ -69,15 +69,14 @@ export default {
     this.fetchApis();
   },
   watch: {
-      // eslint-disable-next-line
-      '$route' (to, from) {
-        if (to && to.params && to.params.apiId) {
-          this.id = to.params.apiId;
-          console.log(to.params.apiId);
-          this.fetchApis();
-        }
+    '$route' (to, from) {
+      if (to && to.params && to.params.apiId) {
+        this.id = to.params.apiId;
+        console.log(to.params.apiId);
+        this.fetchApis();
       }
     }
+  }
 }
 </script>
 

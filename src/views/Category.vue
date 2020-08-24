@@ -9,9 +9,9 @@
               {{ api.API }}
             </router-link>
           </h2>
-         <p>{{ api.Description }}</p>
+          <p>{{ api.Description }}</p>
+        </div>
       </div>
-     </div>
     </div>
   </div>
 </template>
@@ -44,7 +44,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -41,7 +41,4 @@ export default {
     text-align: center;
     padding-bottom: 10px;
   }
-
-  .contact-link img {
-  }
 </style>

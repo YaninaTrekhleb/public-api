@@ -9,7 +9,7 @@ import Sitemap from '../components/Sitemap.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -39,8 +39,7 @@ Vue.use(VueRouter)
     path: '/sitemap',
     name: 'Sitemap',
     component: Sitemap
-  },
-
+  }
 ]
 
 const router = new VueRouter({
