@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <NavMenu />
-    <router-view /> 
-    <Category />
-    <Footer />
+    <div class="main-container">
+      <NavMenu />
+      <router-view /> 
+      <Category />
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -24,16 +26,18 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
   body {
-    margin: 0;
+    margin: auto;
   }
 
   #app {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
   }
 
-  h1 {
-    color: #516d6d;
+  .main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 </style>

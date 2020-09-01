@@ -1,18 +1,20 @@
 <template>
   <div id="footer">
-    <h3>
-     <router-link to="/sitemap">
-        Sitemap
-      </router-link>
-    </h3>
+    <div class="footer-info">
+      <h3>
+      <router-link to="/sitemap">
+          Sitemap
+        </router-link>
+      </h3>
 
-    <div class="contact-links">
-      <a href="https://github.com/YaninaTrekhleb" target="_blank">
-        <img src="../images/logo/github-logo-icon.png" alt="github-logo" width="30">
-      </a>
-      <a href="https://www.linkedin.com/in/yanina-trekhleb/" target="_blank">
-        <img src="../images/logo/linkedin-logo.png" alt="linkedin-logo" width="30">
-      </a>
+      <div class="contact-links">
+        <a href="https://github.com/YaninaTrekhleb" target="_blank">
+          <img src="../images/logo/github-logo-icon.png" alt="github-logo" width="30">
+        </a>
+        <a href="https://www.linkedin.com/in/yanina-trekhleb/" target="_blank">
+          <img src="../images/logo/linkedin-logo.png" alt="linkedin-logo" width="30">
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -26,19 +28,38 @@ export default {
 
 <style>
   #footer {
-    background-color: #b7cdcc98;
-    height: 120px;
+    position: relative; /* absolute*/ 
+    bottom: 0;
+    width: 100%;
+    background-color: #afc3daab;
+    height: 100px;
+    /* margin-top: 200px; */
+  }
+
+  .footer-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    padding-bottom: 10px;
   }
 
-  h3 {
+  .footer-info h3 {
     font-weight: 400;
     font-size: 24px;
     text-align: center;
-    padding-bottom: 10px;
+    margin: 0;
+    padding: 10px;
   }
+
+  .contact-links a {
+    margin-right: 10px;
+  }
+
+  /* iPhone version */
+  @media (max-width: 767px) { 
+    .footer-info h3 {
+      font-size: 20px;
+  }
+}
 </style>

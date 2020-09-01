@@ -66,10 +66,8 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
   .home-banner {
-    height: 300px;
+    height: 250px;
     width: 100%;
     background-image: url('../images/background-img.jpg');
     background-size: cover;
@@ -81,55 +79,58 @@ export default {
     padding: 0;
   }
 
-  h1 {
-    color: #c79072;
+  .header-banner h1 {
+    color: #646464;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 40px;
   }
 
   .apis-view {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-items: center;
-    padding: 30px;
+    justify-content: center;
+    align-self: center;
+    padding: 10px;
   }
  
   .apis-view div {
-    width: 40%;
-    border: 1px solid #e4dcd2c2;
-    border-radius: 8px;
-    padding: 16px;
+    width: 20%;
+    margin: 10px;
+    border: 1px solid #c9c8c7e7;
+    border-radius: 10px;
     font-weight: bold;
-    box-shadow: 2px 2px 6px 4px #e4dcd2c2;
-    margin: 30px;
-    background-color: #f3ede67e;
+    box-shadow: 2px 2px 6px 4px #d8d7d6e7;
+    background-color: #eddcd450;
   }
 
   h2 {
+    color: #a9b8c9;
     font-weight: 500;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   p {
-    font-size: 22px;
-    color: #686767;
+    font-size: 16px;
+    color: #767879;
     font-weight: 400;
+    margin: 2px;
   }
 
   a:link {
     text-decoration: none;
-    color: #516d6d;
+    color: #505f72;
+    font-weight: 500;
   }
 
   a:visited {
-    color: #587474;
+    color: #a9b8c9;
   }
 
   a:hover {
-   color: #c79072;
+   color: #6e819a;
   }
 
   .sorting {
@@ -137,6 +138,7 @@ export default {
     flex-direction: row;
     justify-content: center;
   }
+
   .sorting label {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -152,16 +154,25 @@ export default {
 
 /* iPad version */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .apis-view {
-    flex-direction: column;
+  .home-banner {
+    height: 200px;
+  }
+
+  .apis-view div {
+    /* flex-direction: column; */
+    flex-direction: row;
     align-items: center;
   }
 }
 
 /* iPhone version */
-@media (max-width: 812px) { 
-  h1 {
-    font-size: 30px;
+@media (max-width: 767px) { 
+  .home-banner {
+    height: 150px;
+  }
+
+  .header-banner h1 {
+    font-size: 24px;
     padding: 20px;
     margin: 0;
   }
@@ -172,16 +183,16 @@ export default {
   }
 
    .apis-view div {
-    width: 80%;
-    padding: 10px;
+    width: 70%;
+    padding: 5px;
   }
 
    h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 </style>

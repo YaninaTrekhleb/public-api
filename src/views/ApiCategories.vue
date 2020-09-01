@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style scoped>
+  #api-categories h1 {
+    color: #646464;
+  }
+
   @media (min-width: 768px) and (max-width: 1024px) {
     .apis-view {
       flex-direction: row;
@@ -54,6 +58,21 @@ export default {
 
     .apis-view div {
       width: 30%;
+    }
+  }
+
+  /* iPhone version */
+  @media (max-width: 767px) {
+    #api-categories h1 {
+      font-size: 26px;
+    }
+    
+    .apis-view div {
+      width: 50%;
+    }
+
+    #api-categories h2 {
+      font-size: 16px;
     }
   }
 </style>

@@ -69,7 +69,7 @@ export default {
     this.fetchApis();
   },
   watch: {
-    '$route' (to, from) {
+    '$route' (to) {
       if (to && to.params && to.params.apiId) {
         this.id = to.params.apiId;
         console.log(to.params.apiId);
@@ -81,26 +81,23 @@ export default {
 </script>
 
 <style scoped>
-  #api-details {
-    color: rgb(112, 76, 76);
-  }
+  /* #api-details {
+    color: #704c4c;
+  } */
 
   .apis-specific {
     display: flex;
     flex-direction: column;
   }
 
-  .apis-specific h1 {
+  /* .apis-specific h1 {
     color: #516d6d;
-  } 
+  }  */
 
   .see-more h2 {
-    color: #9c6b50;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     font-size: 24px;
     margin-top: 120px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   .similar-api-view {
@@ -109,28 +106,29 @@ export default {
     justify-content: space-evenly;
   }
   .similar-api-view div {
-    width: 40%;
+    width: 20%;
     border: 1px solid #e4dcd2c2;
-    padding: 10px;
+    padding: 5px;
     font-weight: bold;
     box-shadow: 2px 2px 6px 4px #e4dcd2c2;
-    margin: 30px;
+    margin: 10px 0;
     background-color: #f3ede67e;
   }
 
   .similar-api-view a {
-    font-weight: 200;
+    font-weight: 500;
   }
 
 /* iPad version */
 @media (min-width: 768px) and (max-width: 1024px) {
   .similar-api-view {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .similar-api-view div {
-    width: 30%;
+    width: 25%;
+    padding: 10px 5px;
   }
 
   .apis-specific h1 {
@@ -147,18 +145,23 @@ export default {
 }
 
 /* iPhone version */
-@media (max-width: 812px) { 
+@media (max-width: 767px) { 
+
+  .apis-specific h1 {
+    font-size: 26px;
+  }
   .similar-api-view {
     flex-direction: column;
     align-items: center;
   }
 
   .similar-api-view div {
-    width: 80%;
+    width: 60%;
   }
 
   .similar-api-view a {
     word-break: break-all;
+    padding: 5px;
   } 
 
   .see-more h2 {

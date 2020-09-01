@@ -48,20 +48,23 @@ export default {
 </script>
 
 <style scoped>
-  .random-api-view h2 {
-    color: #587474;
+  .random-api {
+    flex: 1;
   }
 
+  .random-api h1 {
+    color: #646464;
+  }
   .another-random-btn {
     margin-top: 70px;
   }
 
   .another-random-btn button {
-    color: #516d6d;
+    color: #505f72;
     background: #f3ede67e;
     border-radius: 6px;
-    border: 1px solid #e4dcd2c2;
-    box-shadow: 2px 2px 6px 4px #e4dcd2c2;
+    border: 1px solid #c9c8c7e7;
+    box-shadow: 2px 2px 6px 4px #d8d7d6e7;
     font-size: 20px;
     font-weight: 600;
     padding: 10px 15px;
@@ -76,9 +79,13 @@ export default {
 }
 
 /* iPhone version */
-@media (max-width: 812px) { 
-  .another-random-btn button {
+@media (max-width: 767px) { 
+  .random-api h1 {
+    font-size: 26px;
+  }
+  .another-random-btn button { 
     margin-bottom: 200px;
+    font-size: 14px;
   }
 }
 </style>
