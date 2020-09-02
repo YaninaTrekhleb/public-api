@@ -6,7 +6,7 @@
     </div>
     <div class="sorting">
       <label>Sort by: </label>
-      <select @change="onSortChange($event)" v-model="sortingKey">
+      <select v-model="sortingKey">
         <option value="API">
           Title (A-Z)
         </option>
@@ -15,8 +15,8 @@
         </option>
       </select>
     </div>
-    <div v-if="latestApis != null" class="apis-view">
-      <div v-for="api in latestApis" v-bind:key="api.API">
+    <div v-if="sortedApis != null" class="apis-view">
+      <div v-for="api in sortedApis" v-bind:key="api.API">
         <h2>
           <router-link :to="`/api/${api.API}`">
             {{ api.API }}
@@ -30,6 +30,7 @@
 
 <script>
 import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
+// import func from '../../vue-temp/vue-editor-bridge';
 
 export default {
   name: 'Home',
@@ -40,13 +41,20 @@ export default {
       sortingKey: 'API'
     }
   },
-  methods: {
-    sortBy (prop) {
-      this.latestApis.sort((a,b) => a[prop] < b[prop] ? -1 : 1);
-    },
-    onSortChange(event) {
-      this.sortBy(event.target.value);
-    },
+  computed: {
+    sortedApis: function() {
+      const compare = (a, b) => {
+        if (a[this.sortingKey] < b[this.sortingKey])
+          return -1;
+        if (a[this.sortingKey] > b[this.sortingKey])
+          return 1;
+        return 0;
+      }
+      if (!this.latestApis) {
+        return this.latestApis;
+      }
+      return [...this.latestApis].sort(compare);
+    }
   },
   created() {
     this.fetchLatestEntries();
