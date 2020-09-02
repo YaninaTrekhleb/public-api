@@ -15,8 +15,8 @@
         </option>
       </select>
     </div>
-    <div v-if="apis != null" class="apis-view">
-      <div v-for="api in apis" v-bind:key="api.API">
+    <div v-if="latestApis != null" class="apis-view">
+      <div v-for="api in latestApis" v-bind:key="api.API">
         <h2>
           <router-link :to="`/api/${api.API}`">
             {{ api.API }}
@@ -29,39 +29,28 @@
 </template>
 
 <script>
+import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
 
 export default {
   name: 'Home',
+  mixins: [apiFetcherMixin],
   data () {
     return {
       title: 'Get latest free APIs',
       sortingKey: 'API',
-      url_base: 'https://api.publicapis.org/entries',
-      category: '',
-      apis: null
+      category: ''
     }
   },
   methods: {
-    fetchApis () {
-      fetch(`${this.url_base}`)
-        .then(res => {
-          return res.json();
-        })
-        .then(this.setResults)
-        .catch(() => console.log("Can’t access response. Blocked by browser?"));
-    },
-    setResults (results) {
-      this.apis = results.entries.slice(0, 10);
-    },
     sortBy (prop) {
-      this.apis.sort((a,b) => a[prop] < b[prop] ? -1 : 1);
+      this.latestApis.sort((a,b) => a[prop] < b[prop] ? -1 : 1);
     },
     onSortChange(event) {
       this.sortBy(event.target.value);
     },
   },
-  async created() {
-    this.fetchApis();
+  created() {
+    this.fetchLatestEntries();
   }
 }
 </script>

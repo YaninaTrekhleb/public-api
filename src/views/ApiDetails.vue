@@ -44,7 +44,6 @@ export default {
         .catch(() => console.log("Can’t access response. Blocked by browser?"));
     },
     fetchSimilarApis (categoryId) {
-      console.log(`${this.url_base}?category=${categoryId}`)
       fetch(`${this.url_base}?category=${categoryId}`)
         .then(res => {
           return res.json();

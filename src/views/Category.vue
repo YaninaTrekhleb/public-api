@@ -2,8 +2,8 @@
   <div id="category-page">
     <div>
       <h1>{{this.category}}</h1>
-      <div v-if="apis != null" class="apis-view">
-        <div v-for="api in apis.entries" :key="api.API">
+      <div v-if="categoryApis != null" class="apis-view">
+        <div v-for="api in categoryApis.entries" :key="api.API">
           <h2>
             <router-link :to="`/api/${api.API}`">
               {{ api.API }}
@@ -17,30 +17,18 @@
 </template>
 
 <script>
+import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
+
 export default {
   name: 'CategoryPage',
+  mixins: [apiFetcherMixin],
   data () {
     return {
-      url_base: 'https://api.publicapis.org/entries',
       category: this.$route.params.categoryId,
-      apis: null
-    }
-  },
-  methods: {
-    fetchApis () {
-      fetch(`${this.url_base}?category=${this.category}`)
-        .then(res => {
-          return res.json();
-        })
-        .then(this.setResults)
-        .catch(() => console.log("Can’t access response. Blocked by browser?"));
-    },
-    setResults (results) {
-      this.apis = results;
     }
   },
   async created() {
-    this.fetchApis();
+    this.fetchCategoryEntries(this.category);
   }
 }
 </script>

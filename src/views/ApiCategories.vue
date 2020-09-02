@@ -16,27 +16,15 @@
 </template>
 
 <script>
+import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
+
 export default {
   name: 'CategoryPage',
+  mixins: [apiFetcherMixin],
   data () {
     return {
-      title: 'All categories',
-      url_base: 'https://api.publicapis.org/categories',
-      categories: null
+      title: 'All categories'
     }   
-  },
-  methods: {
-    fetchCategories () {
-      fetch(`${this.url_base}`)
-        .then(res => {
-          return res.json();
-        })
-        .then(this.setResults)
-        .catch(() => console.log("Can’t access response. Blocked by browser?"));
-    },
-    setResults (results) {
-      this.categories = results;
-    }
   },
   async created() {
     this.fetchCategories();
