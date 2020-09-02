@@ -24,10 +24,10 @@ export const apiFetcherMixin = {
           this.categories = response;
         })
     },
-    fetchLatestEntries () {
+    fetchLatestEntries (quantity = 10) {
       fetchApi('entries')
         .then((response) => {
-          this.latestApis = response.entries.slice(0, 10);
+          this.latestApis = response.entries.slice(0, quantity);
         })
     },
     fetchCategoryEntries(categoryId) {
