@@ -3,7 +3,6 @@
     <div class="main-container">
       <NavMenu />
       <router-view /> 
-      <Category />
       <Footer />
     </div>
   </div>

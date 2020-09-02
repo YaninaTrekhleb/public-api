@@ -2,7 +2,7 @@
   <div id="sitemap">
     <h2>Sitemap</h2>
       <div v-if="paths != null && paths.length">
-        <div v-for="path in paths" v-bind:key="path">
+        <div v-for="path in paths" v-bind:key="path.path">
           <ul class="sitemap-list">
             <li> 
               <router-link :to="path.path">
