@@ -37,8 +37,7 @@ export default {
   data () {
     return {
       title: 'Get latest free APIs',
-      sortingKey: 'API',
-      category: ''
+      sortingKey: 'API'
     }
   },
   methods: {

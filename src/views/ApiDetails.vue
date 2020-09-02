@@ -1,9 +1,9 @@
 <template>
   <div id="api-details">
-    <div v-if="apis != null && apis.entries && apis.entries.length" class="apis-specific">
-      <h1>{{ apis.entries[0].API }}</h1>
-      <p>{{ apis.entries[0].Description }}</p>
-      <a :href="apis.entries[0].Link">{{ apis.entries[0].Link }}</a>
+    <div v-if="apiDetails != null && apiDetails.entries && apiDetails.entries.length" class="apis-specific">
+      <h1>{{ apiDetails.entries[0].API }}</h1>
+      <p>{{ apiDetails.entries[0].Description }}</p>
+      <a :href="apiDetails.entries[0].Link">{{ apiDetails.entries[0].Link }}</a>
       <div class="see-more">
         <h2>You may also like</h2>
       </div>
@@ -15,7 +15,7 @@
           </router-link>
         </h2>
         <p>{{ api.Description }}</p>
-        <a :href="apis.entries[0].Link">{{ apis.entries[0].Link }}</a>
+        <a :href="apiDetails.entries[0].Link">{{ apiDetails.entries[0].Link }}</a>
         </div>
       </div> 
     </div> 
@@ -23,56 +23,24 @@
 </template>
 
 <script>
+import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
+
 export default {
   name: 'ApiDetails',
+  mixins: [apiFetcherMixin],
   data () {
     return {
-      url_base: 'https://api.publicapis.org/entries',
-      category: '',
-      apis: null,
-      similarApis: null,
       id: this.$route.params.apiId
     }
   },
-  methods: {
-    fetchApis () {
-      fetch(`${this.url_base}?title=${this.id}`)
-        .then(res => {
-          return res.json();
-        })
-        .then(this.setResults)
-        .catch(() => console.log("Can’t access response. Blocked by browser?"));
-    },
-    fetchSimilarApis (categoryId) {
-      fetch(`${this.url_base}?category=${categoryId}`)
-        .then(res => {
-          return res.json();
-        })
-        .then(this.setSimilarResults)
-        .catch((error) => console.log("Can’t access response. Blocked by browser?", error));
-    },
-    setResults (results) {
-      this.apis = results;
-      if (results && results.entries && results.entries.length) {
-        const categoryId = results.entries[0].Category;
-        this.fetchSimilarApis(categoryId);
-      }
-    },
-    setSimilarResults (results) {
-      if (results && results.entries && results.entries.length) {
-        this.similarApis = results.entries.slice(0, 3);
-      } 
-    }
-  },
   async created() {
-    this.fetchApis();
+    this.fetchApiDetails(this.id, true);
   },
   watch: {
     '$route' (to) {
       if (to && to.params && to.params.apiId) {
         this.id = to.params.apiId;
-        console.log(to.params.apiId);
-        this.fetchApis();
+        this.fetchApiDetails(this.id, true);
       }
     }
   }
