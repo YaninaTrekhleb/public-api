@@ -42,6 +42,7 @@ function getRoutesList(routes, pre) {
       name: route.name
     }
 
+    // Filter out the '*' path.
     if (route.path !== '*') {
       array.push(routeInfo);
     }

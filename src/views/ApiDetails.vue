@@ -1,3 +1,6 @@
+<!-- On ApiDetails page is displayed one API with title and description.
+API returns an array with just one element. To get it I use first element of array.-->
+
 <template>
   <div id="api-details">
     <div 
@@ -52,9 +55,12 @@ export default {
       id: this.$route.params.apiId
     }
   },
-  async created() {
+  created() {
     this.fetchApiDetails(this.id, true);
   },
+  // Watch function is called when user clicks on API link. 
+  // It accept parameter 'to' which holds the next API.
+  // Each time a new link is clicked, the function 'watch' is called to render data for the next API.
   watch: {
     '$route' (to) {
       if (to && to.params && to.params.apiId) {

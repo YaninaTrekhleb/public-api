@@ -1,3 +1,5 @@
+<!-- Random API page render a random API from random categories.-->
+
 <template>
   <div class="random-api">
     <h2>{{ title }}</h2>
@@ -38,7 +40,7 @@ export default {
       title: 'Get some random API'
     }
   },
-  async created() {
+  created() {
     this.fetchRandomEntries();
   }
 }

@@ -1,3 +1,7 @@
+<!-- On this page you can find all API categories. 
+By clicking on the name of a category, you navigate to a page 
+with all available APIs on this topic.-->
+
 <template>
   <div id="api-categories">
     <div>
@@ -32,7 +36,7 @@ export default {
       title: 'All categories'
     }   
   },
-  async created() {
+  created() {
     this.fetchCategories();
   }
 }

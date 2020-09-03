@@ -1,4 +1,4 @@
-/* At home page prints out the last 10 APIs. */
+<!-- At home page prints out the last 10 APIs. -->
 <template>
   <div class="home">
     <div class="header-banner"> 

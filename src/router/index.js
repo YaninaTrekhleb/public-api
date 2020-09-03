@@ -9,6 +9,7 @@ import Sitemap from '../components/Sitemap.vue'
 
 Vue.use(VueRouter)
 
+// Set up site routes.
 const routes = [
   {
     path: '/',

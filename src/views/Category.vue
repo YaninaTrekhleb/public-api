@@ -33,7 +33,7 @@ export default {
       category: this.$route.params.categoryId,
     }
   },
-  async created() {
+  created() {
     this.fetchCategoryEntries(this.category);
   }
 }
