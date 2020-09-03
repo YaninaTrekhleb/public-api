@@ -76,7 +76,7 @@ export default {
   .home {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: calc(100vh - 200px);
   }
 
   .home-banner {
@@ -182,7 +182,6 @@ export default {
 /* iPhone version */
 @media (max-width: 767px) { 
   .home {
-    height: 120vh;
     margin-bottom: 30px;
   }
 

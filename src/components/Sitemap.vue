@@ -60,7 +60,7 @@ function getRoutesList(routes, pre) {
   #sitemap {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: calc(100vh - 200px);
  }
 
   h2 {
@@ -73,8 +73,7 @@ function getRoutesList(routes, pre) {
   
   .sitemap-list {
     display: flex;
-    justify-content: stretch;
-    margin-left: 100px;
+    justify-content: flex-start;
   }
 
  .sitemap-list li {

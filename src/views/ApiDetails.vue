@@ -76,7 +76,7 @@ export default {
   #api-details {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: calc(100vh - 200px);
   }
 
   .apis-specific {

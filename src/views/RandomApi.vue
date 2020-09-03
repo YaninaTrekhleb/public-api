@@ -49,6 +49,7 @@ export default {
 <style>
   .random-api {
     flex: 1;
+    min-height: calc(100vh - 200px);
   }
 
   .random-api h2 {

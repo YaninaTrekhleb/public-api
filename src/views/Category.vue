@@ -43,6 +43,7 @@ export default {
   #category-page {
     display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 200px);
   }
 
   h2 {
