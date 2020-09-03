@@ -61,6 +61,10 @@ export default {
     transition: 0.4s;
   }
 
+  #nav-menu a.router-link-exact-active {
+    color: #5a807c;
+  }
+
   .fixed-top h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
