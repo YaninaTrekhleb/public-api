@@ -8,11 +8,25 @@
       </h3>
 
       <div class="contact-links">
-        <a href="https://github.com/YaninaTrekhleb" target="_blank">
-          <img src="../images/logo/github-logo-icon.png" alt="github-logo" width="30">
+        <a 
+          href="https://github.com/YaninaTrekhleb" 
+          target="_blank"
+        >
+          <img 
+            src="../images/logo/github-logo-icon.png" 
+            alt="github-logo" 
+            class="footer-logo"
+          >
         </a>
-        <a href="https://www.linkedin.com/in/yanina-trekhleb/" target="_blank">
-          <img src="../images/logo/linkedin-logo.png" alt="linkedin-logo" width="30">
+        <a 
+          href="https://www.linkedin.com/in/yanina-trekhleb/" 
+          target="_blank"
+        >
+          <img 
+            src="../images/logo/linkedin-logo.png" 
+            alt="linkedin-logo" 
+            class="footer-logo"
+          >
         </a>
       </div>
     </div>
@@ -28,12 +42,11 @@ export default {
 
 <style>
   #footer {
-    position: relative; /* absolute*/ 
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #afc3daab;
     height: 100px;
-    /* margin-top: 200px; */
   }
 
   .footer-info {
@@ -54,6 +67,10 @@ export default {
 
   .contact-links a {
     margin-right: 10px;
+  }
+
+  .footer-logo {
+    width: 30px;
   }
 
   /* iPhone version */

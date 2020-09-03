@@ -1,18 +1,28 @@
 <template>
   <div class="random-api">
-    <h1>{{ title }}</h1>
-    <div v-if="randomApi != null" class="random-api-view">
-      <div v-for="api in randomApi.entries" :key="api.API">
-        <h2>
+    <h2>{{ title }}</h2>
+    <div 
+      v-if="randomApi != null" 
+      class="random-api-view"
+    >
+      <div 
+        v-for="api in randomApi.entries" 
+        :key="api.API"
+      >
+        <h3>
           <router-link :to="`/api/${api.API}`">
             {{ api.API }}
           </router-link>
-        </h2>
-        <p>{{ api.Description }}</p>
+        </h3>
+        <p>
+          {{ api.Description }}
+        </p>
       </div>
     </div>
     <div class="another-random-btn">
-      <button v-on:click="fetchRandomEntries">Choose another API</button> 
+      <button v-on:click="fetchRandomEntries">
+        Choose another API
+      </button> 
     </div>
   </div>
 </template>
@@ -34,13 +44,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .random-api {
     flex: 1;
   }
 
-  .random-api h1 {
+  .random-api h2 {
     color: #646464;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 40px;
   }
   .another-random-btn {
     margin-top: 70px;
@@ -67,7 +81,7 @@ export default {
 
 /* iPhone version */
 @media (max-width: 767px) { 
-  .random-api h1 {
+  .random-api h2 {
     font-size: 26px;
   }
   .another-random-btn button { 

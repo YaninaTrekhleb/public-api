@@ -68,7 +68,7 @@ export default {
     display: flex;
     flex: 2;
     color: #474747;
-    margin: 0;
+    margin: 0 0 0 20px;
   }
 
 /* iPad version */
@@ -103,12 +103,12 @@ export default {
   }
 
   #nav-menu a {
-    font-size: 16px;
+    font-size: 20px;
     flex-direction: column;
     padding: 5px 0;
   }
 
-  .fixed-top h1{
+  .fixed-top h1 {
     font-size: 30px;
     padding: 10px;
     align-self: center;

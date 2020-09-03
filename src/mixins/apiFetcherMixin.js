@@ -1,5 +1,6 @@
-const apiBaseUrl = 'https://api.publicapis.org';
+const apiBaseUrl = 'https://api.publicapis.org'; // basic APIs link
 
+// a function that indicates the further path from the main API link (f.e. /category, /random)
 const fetchApi = (apiPath) => {
   return fetch(`${apiBaseUrl}/${apiPath}`)
     .then(response => {
@@ -20,12 +21,14 @@ export const apiFetcherMixin = {
     }
   },
   methods: {
+    //fetch APIs by category
     fetchCategories() {
       fetchApi('categories')
         .then((response) => {
           this.categories = response;
         })
     },
+    // fetch latest 10 APIs at Home page
     fetchLatestEntries(quantity = 10) {
       fetchApi('entries')
         .then((response) => {
@@ -38,12 +41,14 @@ export const apiFetcherMixin = {
           this.categoryApis = response;
         })
     },
+    // fetch random API at Random API page
     fetchRandomEntries() {
       fetchApi('random')
         .then((response) => {
           this.randomApi = response;
         })
     },
+    
     fetchApiDetails(id, fetchSimilar = false, similarQuantity = 3) {
       fetchApi(`entries?title=${id}`)
         .then((response) => {
@@ -54,6 +59,7 @@ export const apiFetcherMixin = {
           }
         })
     },
+    // fetch similar 3 pages from the same category
     fetchSimilarApis(categoryId, quantity = 3) {
       fetchApi(`entries?category=${categoryId}`)
         .then((response) => {

@@ -1,11 +1,12 @@
+/* At home page prints out the last 10 APIs. */
 <template>
   <div class="home">
     <div class="header-banner"> 
       <div class="home-banner"></div>
-      <h1>{{ title }}</h1>
+      <h2>{{ title }}</h2>
     </div>
     <div class="sorting">
-      <label>Sort by: </label>
+      <label for="sorting">Sort by: </label>
       <select v-model="sortingKey">
         <option value="API">
           Title (A-Z)
@@ -15,14 +16,22 @@
         </option>
       </select>
     </div>
-    <div v-if="sortedApis != null" class="apis-view">
-      <div v-for="api in sortedApis" v-bind:key="api.API">
-        <h2>
+    <div 
+      v-if="sortedApis != null" 
+      class="apis-view"
+    >
+      <div 
+        v-for="api in sortedApis" 
+        :key="api.API"
+      >
+        <h3>
           <router-link :to="`/api/${api.API}`">
             {{ api.API }}
           </router-link>
-        </h2>
-        <p>{{ api.Description }}</p>
+        </h3>
+        <p>
+          {{ api.Description }}
+        </p>
       </div>
     </div>    
   </div>
@@ -30,7 +39,6 @@
 
 <script>
 import { apiFetcherMixin } from '../mixins/apiFetcherMixin';
-// import func from '../../vue-temp/vue-editor-bridge';
 
 export default {
   name: 'Home',
@@ -63,6 +71,12 @@ export default {
 </script>
 
 <style>
+  .home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
   .home-banner {
     height: 250px;
     width: 100%;
@@ -76,7 +90,7 @@ export default {
     padding: 0;
   }
 
-  .header-banner h1 {
+  .header-banner h2 {
     color: #646464;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -91,6 +105,7 @@ export default {
     justify-content: center;
     align-self: center;
     padding: 10px;
+    margin-bottom: 30px;
   }
  
   .apis-view div {
@@ -103,10 +118,11 @@ export default {
     background-color: #eddcd450;
   }
 
-  h2 {
+  .apis-view h3 {
     color: #a9b8c9;
     font-weight: 500;
     font-size: 22px;
+    word-wrap: break-word;
   }
 
   p {
@@ -114,6 +130,7 @@ export default {
     color: #767879;
     font-weight: 400;
     margin: 2px;
+    word-wrap: break-word;
   }
 
   a:link {
@@ -156,9 +173,7 @@ export default {
   }
 
   .apis-view div {
-    /* flex-direction: column; */
     flex-direction: row;
-    align-items: center;
   }
 }
 
@@ -168,23 +183,22 @@ export default {
     height: 150px;
   }
 
-  .header-banner h1 {
+  .header-banner h2 {
     font-size: 24px;
     padding: 20px;
     margin: 0;
   }
 
- .apis-view {
-    flex-direction: column;
-    align-items: center;
+  .apis-view {
+    flex-direction: row;
   }
 
-   .apis-view div {
-    width: 70%;
+  .apis-view div {
+    width: 40%;
     padding: 5px;
   }
 
-   h2 {
+  h3 {
     font-size: 20px;
   }
 

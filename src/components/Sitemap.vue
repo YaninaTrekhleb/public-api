@@ -1,12 +1,17 @@
 <template>
   <div id="sitemap">
     <h2>Sitemap</h2>
-      <div v-if="paths != null && paths.length">
-        <div v-for="path in paths" v-bind:key="path.path">
+      <div 
+        v-if="paths != null && paths.length"
+      >
+        <div 
+          v-for="path in paths" 
+          :key="path.path"
+        >
           <ul class="sitemap-list">
             <li> 
               <router-link :to="path.path">
-              {{ path.name }}
+                {{ path.name }}
               </router-link>
             </li>
           </ul>
@@ -51,11 +56,17 @@ function getRoutesList(routes, pre) {
 </script>
 
 <style scoped>
+  #sitemap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+ }
+
   h2 {
     color: #646464;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 36px;
+    font-weight: 500;
+    font-size: 30px;
     margin-bottom: 50px;
   }
   
