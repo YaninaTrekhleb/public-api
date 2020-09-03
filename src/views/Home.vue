@@ -23,7 +23,7 @@
       class="apis-view"
     >
       <div 
-        v-for="api in sortedApis" 
+        v-for="api in sortedApis"
         :key="api.API"
       >
         <h3>
