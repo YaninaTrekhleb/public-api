@@ -38,7 +38,7 @@ export const apiFetcherMixin = {
     },
     // Fetch all APIs for selected category.
     fetchCategoryEntries(categoryId) {
-      fetchApi(`entries?category=${categoryId}`)
+      fetchApi(`entries?category=${encodeURIComponent(categoryId)}`)
         .then((response) => {
           this.categoryApis = response;
         })
@@ -52,7 +52,7 @@ export const apiFetcherMixin = {
     },
     // Fetch API by its Id. Also fetch several similar APIs if required.
     fetchApiDetails(id, fetchSimilar = false, similarQuantity = 3) {
-      fetchApi(`entries?title=${id}`)
+      fetchApi(`entries?title=${encodeURIComponent(id)}`)
         .then((response) => {
           this.apiDetails = response;
           // Checking that there is all the data from the API, to avoid errors.
@@ -64,7 +64,7 @@ export const apiFetcherMixin = {
     },
     // Fetch similar 3 pages from the same category.
     fetchSimilarApis(categoryId, quantity = 3) {
-      fetchApi(`entries?category=${categoryId}`)
+      fetchApi(`entries?category=${encodeURIComponent(categoryId)}`)
         .then((response) => {
           if (response && response.entries && response.entries.length) {
             this.similarApis = response.entries.slice(0, quantity);
