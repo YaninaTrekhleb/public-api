@@ -57,7 +57,6 @@ export default {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 30px;
-    margin-bottom: 40px;
   }
   .another-random-btn {
     margin-top: 70px;
@@ -72,14 +71,6 @@ export default {
     font-size: 20px;
     font-weight: 600;
     padding: 10px 15px;
-    margin-bottom: 250px;
-}
-
-/* iPad version */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .another-random-btn button {
-    margin-bottom: 465px;
-  }
 }
 
 /* iPhone version */
@@ -88,7 +79,6 @@ export default {
     font-size: 22px;
   }
   .another-random-btn button { 
-    margin-bottom: 200px;
     font-size: 14px;
   }
 }
