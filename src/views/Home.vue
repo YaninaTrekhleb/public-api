@@ -6,7 +6,9 @@
       <h2>{{ title }}</h2>
     </div>
     <div class="sorting">
-      <label for="sorting">Sort by: </label>
+      <label for="sorting">
+        Sort by: 
+      </label>
       <select v-model="sortingKey">
         <option value="API">
           Title (A-Z)
@@ -179,6 +181,11 @@ export default {
 
 /* iPhone version */
 @media (max-width: 767px) { 
+  .home {
+    height: 120vh;
+    margin-bottom: 30px;
+  }
+
   .home-banner {
     height: 150px;
   }

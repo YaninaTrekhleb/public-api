@@ -103,16 +103,16 @@ export default {
   }
 
   #nav-menu a {
-    font-size: 20px;
+    font-size: 16px;
     flex-direction: column;
     padding: 5px 0;
   }
 
   .fixed-top h1 {
-    font-size: 30px;
-    padding: 10px;
+    font-size: 26px;
+    padding: 5px;
     align-self: center;
-    margin-bottom: 5px;
+    margin: 5px 0;
   }
 }
 </style>
