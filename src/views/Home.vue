@@ -190,7 +190,7 @@ export default {
   }
 
   .header-banner h2 {
-    font-size: 24px;
+    font-size: 22px;
     padding: 20px;
     margin: 0;
   }

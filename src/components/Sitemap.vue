@@ -84,7 +84,7 @@ function getRoutesList(routes, pre) {
   /* iPhone version */
   @media (max-width: 767px) {
     h2 {
-      font-size: 26px;
+      font-size: 22px;
     }
   }
 </style>

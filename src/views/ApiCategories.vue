@@ -71,7 +71,7 @@ export default {
 /* iPhone version */
 @media (max-width: 767px) {
   #api-categories h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   
   .apis-view {

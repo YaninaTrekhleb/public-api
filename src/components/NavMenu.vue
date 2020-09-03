@@ -102,10 +102,6 @@ export default {
     padding: 0;
   }
 
-  #nav-menu {
-    padding-top: 80px;
-  }
-
   #nav-menu a {
     font-size: 16px;
     flex-direction: column;

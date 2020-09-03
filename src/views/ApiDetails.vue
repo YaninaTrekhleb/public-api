@@ -150,7 +150,7 @@ export default {
 /* iPhone version */
 @media (max-width: 767px) { 
   .apis-specific h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .similar-api-view {
     flex-direction: column;

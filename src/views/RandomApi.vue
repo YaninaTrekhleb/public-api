@@ -85,7 +85,7 @@ export default {
 /* iPhone version */
 @media (max-width: 767px) { 
   .random-api h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .another-random-btn button { 
     margin-bottom: 200px;
