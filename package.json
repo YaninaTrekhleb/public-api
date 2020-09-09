@@ -29,7 +29,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "vue": {
-    "publicPath": "/test-project/"
+    "publicPath": "/public-api/"
   },
   "eslintConfig": {
     "root": true,
@@ -50,5 +50,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "homepage": "https://https://yaninatrekhleb.github.io/test-project/"
+  "homepage": "https://yaninatrekhleb.github.io/public-api/"
 }
