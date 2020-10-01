@@ -1,7 +1,7 @@
 # Public API 
 Test project using [Public APIs](https://github.com/davemachado/public-api) with Vue.js.
 
-[▶️ Launch Demo](https://yaninatrekhleb.github.io/test-project/)
+[▶️ Launch Demo](https://yaninatrekhleb.github.io/public-api/)
 
 ![Demo](src/images/test-demo.gif)
 
